@@ -4,6 +4,16 @@ set -e
 
 cd $(dirname $0)
 
+C_FILES="\
+src/main.c \
+src/serializer.c \
+"
+
 mkdir -p build
 
-gcc src/main.c -o build/installer
+compile() {
+    gcc $C_FILES -o build/installer -Wall -Werror
+}
+
+time compile
+
