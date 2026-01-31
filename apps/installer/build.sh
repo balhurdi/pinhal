@@ -7,7 +7,8 @@ cd $(dirname $0)
 C_FILES="\
 src/main.c \
 src/serializer.c \
-src/args.c
+src/args.c \
+src/render.c
 "
 
 mkdir -p build
