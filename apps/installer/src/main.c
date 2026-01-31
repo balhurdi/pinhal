@@ -9,7 +9,7 @@ typedef enum _arg_validate_result {
 } arg_validate_result_t;
 
 arg_validate_result_t validate_arguments (installer_args_t* args) {
-    if (args->drives == NULL) {
+    if (args->drives[0][0] == '\0') {
         printf ("Please specify drives");
         return ARG_VALIDATE_NO_DRIVES;
     }
