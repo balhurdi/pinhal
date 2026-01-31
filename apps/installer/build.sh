@@ -13,12 +13,9 @@ src/args.c
 mkdir -p build
 
 compile() {
-    gcc $C_FILES -o build/installer -Wall -Werror
+    gcc $C_FILES -o build/installer -Wall -Werror --debug
 }
 
 time compile
 
 SYSTEM_DRIVE_LIST=$(lsblk -d -o name | grep -v NAME | paste -s -d, /dev/stdin)
-echo $SYSTEM_DRIVE_LIST
-
-./build/installer
