@@ -7,6 +7,7 @@ cd $(dirname $0)
 C_FILES="\
 src/main.c \
 src/serializer.c \
+src/args.c
 "
 
 mkdir -p build
@@ -17,3 +18,7 @@ compile() {
 
 time compile
 
+SYSTEM_DRIVE_LIST=$(lsblk -d -o name | grep -v NAME | paste -s -d, /dev/stdin)
+echo $SYSTEM_DRIVE_LIST
+
+./build/installer
