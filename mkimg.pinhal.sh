@@ -15,5 +15,6 @@ profile_pinhal() {
                         apks="$apks $_a-$_k"
                 done
         done
-        apks="$apks linux-firmware"
+        apks="$apks linux-firmware sudo"
+        apkovl="aports/scripts/genapkovl-mkimgoverlay.sh" 
 }

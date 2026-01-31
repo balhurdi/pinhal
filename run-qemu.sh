@@ -3,11 +3,12 @@
 set -e
 
 cd "$(dirname "$0")"
+mkdir -p vm-drives
 
 DRIVE_SIZE=10G
 MEM_VALUE=512
 ISO_PATH=iso/alpine-pinhal-3.23-x86_64.iso
-DRIVE_PATH=alpine.qcow2
+DRIVE_PATH=vm-drives/alpine.qcow2
 
 # Create disk
 qemu-img create -f qcow2 $DRIVE_PATH $DRIVE_SIZE
