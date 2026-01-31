@@ -13,7 +13,7 @@ src/args.c
 mkdir -p build
 
 compile() {
-    gcc $C_FILES -o build/installer -Wall -Werror --debug
+    gcc $C_FILES -o build/installer -lncurses -Wall -Werror --debug
 }
 
 time compile
